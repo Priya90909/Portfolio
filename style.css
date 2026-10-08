@@ -4,3 +4,8 @@
 
 .photo-placeholder.has-photo{padding:0;overflow:hidden}.has-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
 .cursor-trail{position:fixed;left:0;top:0;width:0;height:0;z-index:9999;pointer-events:none;opacity:0;transition:opacity .15s}.cursor-trail.visible{opacity:1}.cursor-trail:after{content:'';display:block;position:absolute;left:0;top:0;width:34px;height:34px;transform:translate(-50%,-50%);border:1px solid #b7a1ff;border-radius:50%;background:#b7a1ff0d;transition:width .2s,height .2s,background .2s,border-color .2s}.cursor-trail.interactive:after{width:52px;height:52px;background:#b7a1ff20;border-color:#ffa391}@media(prefers-reduced-motion:reduce){.cursor-trail{display:none}}@media(any-pointer:coarse) and (any-pointer:none){.cursor-trail{display:none}}
+/* Contain the cursor overlay so following the pointer cannot widen the page. */
+.cursor-trail{inset:0;width:auto;height:auto;overflow:hidden;transform:none!important}
+.cursor-trail:after{left:var(--cursor-x,0px);top:var(--cursor-y,0px);border-width:2px;background:#b7a1ff16}
+body{overflow-x:clip}.hero-copy,.portrait,.project,.about-copy,.skill-row{min-width:0}.hero{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.has-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.portrait{width:min(360px,100%)}
+@media(max-width:900px){.hero{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}@media(max-width:620px){.hero{grid-template-columns:minmax(0,1fr)}}

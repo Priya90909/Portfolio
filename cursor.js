@@ -14,7 +14,7 @@
   const animate = () => {
     x += (targetX - x) * 0.18;
     y += (targetY - y) * 0.18;
-    ring.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    ring.style.setProperty('--cursor-x', `${x}px`); ring.style.setProperty('--cursor-y', `${y}px`);
     if (Math.abs(targetX - x) + Math.abs(targetY - y) > 0.1) {
       frame = requestAnimationFrame(animate);
     } else {
@@ -39,3 +39,4 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) hide(); });
   preference.addEventListener('change', hide);
 })();
+
